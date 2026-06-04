@@ -1,0 +1,219 @@
+============================================================
+  STEP 1 — Video Pose Extraction  (27 classes, 24 dims)
+============================================================
+[INFO] Found 27 video(s)  (expecting up to 27)
+[INFO] Sampling at 10 fps
+
+  [ 1] A     |  dur: 24.5s  sampled: 245  →  245 ok, 0 skipped
+  [ 2] B     |  dur: 29.4s  sampled: 294  →  294 ok, 0 skipped
+  [ 3] C     |  dur: 34.6s  sampled: 346  →  346 ok, 0 skipped
+  [ 4] D     |  dur: 21.7s  sampled: 217  →  217 ok, 0 skipped
+  [ 5] E     |  dur: 20.6s  sampled: 206  →  206 ok, 0 skipped
+  [ 6] F     |  dur: 26.4s  sampled: 264  →  238 ok, 26 skipped
+  [ 7] G     |  dur: 21.3s  sampled: 213  →  138 ok, 75 skipped
+  [ 8] H     |  dur: 35.2s  sampled: 352  →  312 ok, 40 skipped
+  [ 9] I     |  dur: 23.1s  sampled: 231  →  231 ok, 0 skipped
+  [10] J     |  dur: 17.2s  sampled: 172  →  172 ok, 0 skipped
+  [11] K     |  dur: 20.4s  sampled: 204  →  204 ok, 0 skipped
+  [12] L     |  dur: 19.8s  sampled: 198  →  198 ok, 0 skipped
+  [13] M     |  dur: 13.2s  sampled: 132  →  132 ok, 0 skipped
+  [14] N     |  dur: 16.6s  sampled: 166  →  166 ok, 0 skipped
+  [15] O     |  dur: 19.1s  sampled: 191  →  191 ok, 0 skipped
+  [16] P     |  dur: 18.7s  sampled: 188  →  188 ok, 0 skipped
+  [17] Q     |  dur: 21.8s  sampled: 219  →  219 ok, 0 skipped
+  [18] R     |  dur: 21.6s  sampled: 216  →  216 ok, 0 skipped
+  [19] S     |  dur: 24.7s  sampled: 247  →  215 ok, 32 skipped
+  [20] T     |  dur: 22.2s  sampled: 223  →  223 ok, 0 skipped
+  [21] U     |  dur: 23.4s  sampled: 234  →  234 ok, 0 skipped
+  [22] V     |  dur: 17.2s  sampled: 173  →  173 ok, 0 skipped
+  [23] W     |  dur: 23.3s  sampled: 234  →  234 ok, 0 skipped
+  [24] X     |  dur: 22.5s  sampled: 226  →  226 ok, 0 skipped
+  [25] Y     |  dur: 26.5s  sampled: 265  →  265 ok, 0 skipped
+  [26] Z     |  dur: 17.8s  sampled: 178  →  178 ok, 0 skipped
+  [27] SPC   |  dur: 15.0s  sampled: 150  →  150 ok, 0 skipped
+
+[INFO] Total samples : 5811
+[INFO] Feature dims  : 24
+[INFO] Per-class counts:
+  [ 1] A      245  █████████████████████████████████████████████████
+  [ 2] B      294  ██████████████████████████████████████████████████████████
+  [ 3] C      346  █████████████████████████████████████████████████████████████████████
+  [ 4] D      217  ███████████████████████████████████████████
+  [ 5] E      206  █████████████████████████████████████████
+  [ 6] F      238  ███████████████████████████████████████████████
+  [ 7] G      138  ███████████████████████████
+  [ 8] H      312  ██████████████████████████████████████████████████████████████
+  [ 9] I      231  ██████████████████████████████████████████████
+  [10] J      172  ██████████████████████████████████
+  [11] K      204  ████████████████████████████████████████
+  [12] L      198  ███████████████████████████████████████
+  [13] M      132  ██████████████████████████
+  [14] N      166  █████████████████████████████████
+  [15] O      191  ██████████████████████████████████████
+  [16] P      188  █████████████████████████████████████
+  [17] Q      219  ███████████████████████████████████████████
+  [18] R      216  ███████████████████████████████████████████
+  [19] S      215  ███████████████████████████████████████████
+  [20] T      223  ████████████████████████████████████████████
+  [21] U      234  ██████████████████████████████████████████████
+  [22] V      173  ██████████████████████████████████
+  [23] W      234  ██████████████████████████████████████████████
+  [24] X      226  █████████████████████████████████████████████
+  [25] Y      265  █████████████████████████████████████████████████████
+  [26] Z      178  ███████████████████████████████████
+  [27] SPC    150  ██████████████████████████████
+
+
+============================================================
+  STEP 2 — Coordinate-Space Augmentation  (v6, 24 dims)
+============================================================
+[INFO] Raw samples   : 5811
+[INFO] Feature dims  : 24
+[INFO] Augment ×8   : ~52299 total
+[INFO] Augmenters    : aug_rotation, aug_translation, aug_depth, aug_joint_noise
+  Augmenting 5811/5811 …
+[INFO] Final count   : 52299
+[INFO] source_id rng : 0–5810  (5811 unique sources)
+[✓] Saved → 'poses_augmented.csv'
+
+
+==========================
+  STEP 3 — DNN Training  
+==========================
+[INFO] Feature dims  : 24
+[INFO] Classes found : [np.float64(1.0), np.float64(2.0), np.float64(3.0), np.float64(4.0), np.float64(5.0), np.float64(6.0), np.float64(7.0), np.float64(8.0), np.float64(9.0), np.float64(10.0), np.float64(11.0), np.float64(12.0), np.float64(13.0), np.float64(14.0), np.float64(15.0), np.float64(16.0), np.float64(17.0), np.float64(18.0), np.float64(19.0), np.float64(20.0), np.float64(21.0), np.float64(22.0), np.float64(23.0), np.float64(24.0), np.float64(25.0), np.float64(26.0), np.float64(27.0)]
+[INFO] Split mode    : GROUP-AWARE (no aug leak)
+  Train      :  36603  (~70%)
+  Validation :  10458  (~20%)
+  Test       :   5238  (~10%)
+[INFO] n_classes     : 27
+[INFO] Class weights : min=0.64  max=1.60  ratio=2.51x
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ dense_1 (Dense)                      │ (None, 128)                 │           3,200 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ bn_1 (BatchNormalization)            │ (None, 128)                 │             512 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ relu_1 (Activation)                  │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ drop_1 (Dropout)                     │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_2 (Dense)                      │ (None, 64)                  │           8,256 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ bn_2 (BatchNormalization)            │ (None, 64)                  │             256 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ relu_2 (Activation)                  │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ drop_2 (Dropout)                     │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_3 (Dense)                      │ (None, 32)                  │           2,080 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ bn_3 (BatchNormalization)            │ (None, 32)                  │             128 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ relu_3 (Activation)                  │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ drop_3 (Dropout)                     │ (None, 32)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ output (Dense)                       │ (None, 27)                  │             891 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+
+[TEST] Loss: 0.0004   Accuracy: 100.00%
+       (Group-aware split — this number reflects real generalization.)
+
+   Lbl   Name   Correct   Total    Acc%
+  ──────────────────────────────────────
+  [ 1]   A          279     279   100.0%
+  [ 2]   B          333     333   100.0%
+  [ 3]   C          297     297   100.0%
+  [ 4]   D          198     198   100.0%
+  [ 5]   E          198     198   100.0%
+  [ 6]   F          270     270   100.0%
+  [ 7]   G          144     144   100.0%
+  [ 8]   H          180     180   100.0%
+  [ 9]   I          207     207   100.0%
+  [10]   J          189     189   100.0%
+  [11]   K          180     180   100.0%
+  [12]   L          153     153   100.0%
+  [13]   M           99      99   100.0%
+  [14]   N           90      90   100.0%
+  [15]   O          153     153   100.0%
+  [16]   P          126     126   100.0%
+  [17]   Q          198     198   100.0%
+  [18]   R          225     225   100.0%
+  [19]   S          171     171   100.0%
+  [20]   T          162     162   100.0%
+  [21]   U          243     243   100.0%
+  [22]   V          135     135   100.0%
+  [23]   W          225     225   100.0%
+  [24]   X          216     216   100.0%
+  [25]   Y          315     315   100.0%
+  [26]   Z          153     153   100.0%
+  [27]   SPC         99      99   100.0%
+
+
+  ============================================================
+  MODEL COMPARISON — DNN vs RandomForest vs LSTM  (v2, 24 dims)
+============================================================
+[LOAD] Per-frame data (DNN, RF)…
+       X=(52299, 24)  y=(52299,)  unique sources=5811
+[LOAD] Temporal windows (LSTM)…
+       reading poses_raw.csv…
+       5811 rows read
+       derived 27 video segments (expecting ~27); building windows of length 10…
+       …video 5/27  frames=206  windows_so_far=2115
+       …video 10/27  frames=172  windows_so_far=3865
+       …video 15/27  frames=191  windows_so_far=5280
+       …video 20/27  frames=223  windows_so_far=6980
+       …video 25/27  frames=265  windows_so_far=8800
+       …video 27/27  frames=150  windows_so_far=9320
+       stacking 9320 windows into final array…
+       done. X_seq shape: (9320, 10, 24)
+       X=(9320, 10, 24)  y=(9320,)  unique groups=1864
+[INFO] n_classes = 27
+
+──── RUN 1/3  (seed=42) ────────────────
+  groups  train=4067  val=1162  test=582
+  frames  train=36603 val=10458 test=5238  cw min=0.61/max=1.60
+  windows train=6555 val=1835 test=930  cw min=0.57/max=1.67
+  [DNN] training…
+2026-05-19 14:20:47.542872: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+        acc=99.90%  macroF1=0.999  lat=8.10ms
+  [RF ] training…
+        acc=99.89%  macroF1=0.999  lat=47.25ms
+  [LSTM] training…
+        acc=99.89%  macroF1=0.998  lat=25.69ms
+
+──── RUN 2/3  (seed=43) ────────────────
+  groups  train=4067  val=1162  test=582
+  frames  train=36603 val=10458 test=5238  cw min=0.61/max=1.73
+  windows train=6530 val=1915 test=875  cw min=0.64/max=1.93
+  [DNN] training…
+        acc=99.81%  macroF1=0.998  lat=8.17ms
+  [RF ] training…
+        acc=100.00%  macroF1=1.000  lat=47.35ms
+  [LSTM] training…
+        acc=100.00%  macroF1=1.000  lat=26.62ms
+
+──── RUN 3/3  (seed=44) ────────────────
+  groups  train=4067  val=1162  test=582
+  frames  train=36603 val=10458 test=5238  cw min=0.63/max=1.64
+  windows train=6565 val=1860 test=895  cw min=0.62/max=1.80
+  [DNN] training…
+        acc=99.79%  macroF1=0.997  lat=7.81ms
+  [RF ] training…
+        acc=99.73%  macroF1=0.997  lat=47.75ms
+  [LSTM] training…
+        acc=100.00%  macroF1=1.000  lat=28.29ms
+
+============================================================
+  DONE  —  outputs in ./model_comparison/
+============================================================
+  • report.md         (open this first)
+  • metrics.json      (raw numbers)
+  • metrics_summary.csv
+  • per_class_f1.csv
+  • *.png             (plots)
+exit=True
